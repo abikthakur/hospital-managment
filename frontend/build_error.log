@@ -1,0 +1,28 @@
+
+> frontend@0.0.0 build
+> vite build
+
+[36mvite v4.5.14 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 1416 modules transformed.
+[32m✓ built in 2.80s[39m
+[31m"UserRound" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js", imported by "src/components/DashboardLayout.jsx".[39m
+file: [36mC:/Users/abikt/OneDrive/Desktop/campus placement/hospital-management-system/frontend/src/components/DashboardLayout.jsx:3:33[39m
+[33m1: import { Outlet, Link, useLocation } from 'react-router-dom';
+2: import { useAuth } from '../context/AuthContext';
+3: import { LayoutDashboard, Users, UserRound, Layers, BedDouble, Receipt, LogOut } from 'lucide-react';
+                                    ^
+4: 
+5: const DashboardLayout = () => {[39m
+[31merror during build:
+RollupError: "UserRound" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js", imported by "src/components/DashboardLayout.jsx".
+    at error (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:2287:30)
+    at Module.error (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:13751:16)
+    at Module.traceVariable (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:14181:29)
+    at ModuleScope.findVariable (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:12621:39)
+    at ReturnValueScope.findVariable (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:7130:38)
+    at ChildScope.findVariable (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:7130:38)
+    at Identifier.bind (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:8325:40)
+    at Property.bind (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:5898:23)
+    at ObjectExpression.bind (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:5894:28)
+    at ArrayExpression.bind (file:///C:/Users/abikt/OneDrive/Desktop/campus%20placement/hospital-management-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:5894:28)[39m
