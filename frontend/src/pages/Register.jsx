@@ -1,19 +1,25 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
-import { Building2 } from 'lucide-react';
+import { Building2, Loader2 } from 'lucide-react';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const { register } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const success = await register(name, email, password);
-    if (success) navigate('/dashboard');
+    setIsLoading(true);
+    try {
+      const success = await register(name, email, password);
+      if (success) navigate('/dashboard');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -59,9 +65,17 @@ const Register = () => {
           </div>
           <button 
             type="submit" 
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition"
+            disabled={isLoading}
+            className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Register
+            {isLoading ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Processing...
+              </>
+            ) : (
+              'Register'
+            )}
           </button>
         </form>
         <div className="mt-6 text-center text-sm text-slate-600">
